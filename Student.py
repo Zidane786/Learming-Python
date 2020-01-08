@@ -63,15 +63,14 @@ data_for_percentage=dict()
 for i in range(0,len(name)):
     data_for_percentage.update({name[i]:percentage[i]})
 print(data_for_percentage)
-reval=list()
-data_for_reval=dict()
-temp_reval=list()
-# for k,v in data_of_marks_per_subject.items():
-#     for i in range(0,len(v)):
-#         if i<35:
-#             temp_reval.append(i)
-#         temp_reval_copy=temp_reval.copy()
-#         reval.append(temp_reval)
-#         temp_reval.clear()
-#         data_for_reval.update({k:reval})
-# print(data_for_reval)
+sorted_percentage=dict()
+for k,v in sorted(data_for_percentage.items()):
+    sorted_percentage.update({k:v})
+
+
+print(sorted_percentage)
+rank=list()
+for i in range(1,num+1):
+    z=input("ranks as from A to n Students")
+    rank.append(z)
+print(rank)
