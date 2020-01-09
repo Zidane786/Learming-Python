@@ -73,4 +73,5 @@ rank=list()
 for i in range(1,num+1):
     z=input("ranks as from A to n Students")
     rank.append(z)
+rank.reverse()
 print(rank)
