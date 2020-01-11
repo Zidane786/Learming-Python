@@ -59,9 +59,10 @@ for k, v in data_of_marks_per_subject.items():
             for i in range(0, 5):
                 if ( v[i] >= 30 ):
                     if ( v[i] >= 30 and v[i] <= 40):
+                        grace_marks=40-v[i]
                         count = count - 1
-                        v[i] += 10
-                        print(f"{k} got grace marks")
+                        v[i] += grace_marks
+                        print(f"{k} got {grace_marks} grace marks")
                         res1 = "Pass"
                         result.update({k: res1})
                         KT.update({k: count})
@@ -93,6 +94,7 @@ percentage = list()
 for k, v in data_for_total_marks.items():
     # print(f"{k} got {(v/500)*100} percentage")
     temp_percentage = (v / 500) * 100
+    temp_percentage=format(temp_percentage , ".2f")
     percentage.append(temp_percentage)
 # print(percentage)
 data_for_percentage = dict()
@@ -162,3 +164,156 @@ def Result():
 
 
 Result()
+
+
+#----->OUTPUT:-
+# "/home/zidane/PycharmProjects/Learning 1/venv/bin/python" "/home/zidane/PycharmProjects/Learning 1/Student.py"
+# Enter number of Students:-5
+# Enter the name of Student 1:-
+# Zidane
+# Enter the name of Student 2:-
+# Uzma
+# Enter the name of Student 3:-
+# Shamsheer
+# Enter the name of Student 4:-
+# Vishal
+# Enter the name of Student 5:-
+# Deepyansh
+# Enter marks of Python out of 100 for Zidane:-
+# 100
+# Enter marks of java for out of 100 Zidane:-
+# 100
+# Enter marks of SQL for out of 100 Zidane:-
+# 98
+# Enter marks of CSS for out of 100 Zidane:-
+# 30
+# Enter marks of Javacsript for out of 100 Zidane:-
+# 95
+# Enter marks of Python out of 100 for Uzma:-
+# 100
+# Enter marks of java for out of 100 Uzma:-
+# 100
+# Enter marks of SQL for out of 100 Uzma:-
+# 100
+# Enter marks of CSS for out of 100 Uzma:-
+# 100
+# Enter marks of Javacsript for out of 100 Uzma:-
+# 100
+# Enter marks of Python out of 100 for Shamsheer:-
+# 90
+# Enter marks of java for out of 100 Shamsheer:-
+# 80
+# Enter marks of SQL for out of 100 Shamsheer:-
+# 79
+# Enter marks of CSS for out of 100 Shamsheer:-
+# 30
+# Enter marks of Javacsript for out of 100 Shamsheer:-
+# 30
+# Enter marks of Python out of 100 for Vishal:-
+# 90
+# Enter marks of java for out of 100 Vishal:-
+# 85
+# Enter marks of SQL for out of 100 Vishal:-
+# 34
+# Enter marks of CSS for out of 100 Vishal:-
+# 94
+# Enter marks of Javacsript for out of 100 Vishal:-
+# 94
+# Enter marks of Python out of 100 for Deepyansh:-
+# 90
+# Enter marks of java for out of 100 Deepyansh:-
+# 85
+# Enter marks of SQL for out of 100 Deepyansh:-
+# 29
+# Enter marks of CSS for out of 100 Deepyansh:-
+# 84
+# Enter marks of Javacsript for out of 100 Deepyansh:-
+# 84
+# Zidane got 10 grace marks
+# Vishal got 6 grace marks
+# ranks as from A to N StudentsA
+# ranks as from A to N StudentsB
+# ranks as from A to N StudentsC
+# ranks as from A to N StudentsD
+# ranks as from A to N StudentsE
+# ********** Marks Are:-*********
+# --- Zidane marks:- ---
+# Python=100
+# Java=100
+# SQL=98
+# CSS=40
+# JavaScript=95
+# --------------------
+# --- Uzma marks:- ---
+# Python=100
+# Java=100
+# SQL=100
+# CSS=100
+# JavaScript=100
+# --------------------
+# --- Shamsheer marks:- ---
+# Python=90
+# Java=80
+# SQL=79
+# CSS=30
+# JavaScript=30
+# --------------------
+# --- Vishal marks:- ---
+# Python=90
+# Java=85
+# SQL=40
+# CSS=94
+# JavaScript=94
+# --------------------
+# --- Deepyansh marks:- ---
+# Python=90
+# Java=85
+# SQL=29
+# CSS=84
+# JavaScript=84
+# --------------------
+# *****************************
+# ********** Total Marks Are:-*********
+# Zidane Total marks are 423
+# Uzma Total marks are 500
+# Shamsheer Total marks are 309
+# Vishal Total marks are 397
+# Deepyansh Total marks are 372
+# *****************************
+# ********** Average Marks Are:-*********
+# Zidane average marks are 84.6
+# Uzma average marks are 100.0
+# Shamsheer average marks are 61.8
+# Vishal average marks are 79.4
+# Deepyansh average marks are 74.4
+# *****************************
+# ********** Percentage Are:-*********
+# Zidane got 84.60 percentage
+# Uzma got 100.00 percentage
+# Shamsheer got 61.80 percentage
+# Vishal got 79.40 percentage
+# Deepyansh got 74.40 percentage
+# *****************************
+# ********** Result:-*********
+# Zidane is Pass
+# Uzma is Pass
+# Shamsheer is Fail
+# Vishal is Pass
+# Deepyansh is Fail
+# *****************************
+# ********** Number of KTs :-*********
+# Zidane got 0 KT
+# Uzma got 0 KT
+# Shamsheer got 2 KT
+# Vishal got 0 KT
+# Deepyansh got 1 KT
+# *****************************
+# ***************************** Ranks are *****************************
+# Zidane got Ranked:-A
+# Vishal got Ranked:-B
+# Deepyansh got Ranked:-C
+# Shamsheer got Ranked:-D
+# Uzma got Ranked:-E
+# *********************************************************************
+
+# Process finished with exit code 0
