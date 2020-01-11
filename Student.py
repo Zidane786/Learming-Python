@@ -94,7 +94,6 @@ percentage = list()
 for k, v in data_for_total_marks.items():
     # print(f"{k} got {(v/500)*100} percentage")
     temp_percentage = (v / 500) * 100
-    temp_percentage=format(temp_percentage , ".2f")
     percentage.append(temp_percentage)
 # print(percentage)
 data_for_percentage = dict()
@@ -107,7 +106,7 @@ for k, v in sorted(data_for_percentage.items(), key=lambda item: item[1]):
 # print(sorted_percentage)
 rank = list()
 for i in range(1, num + 1):
-    z = input("ranks as from A to N Students")
+    z = input("ranks as from A to N Students:-")
     rank.append(z)
 rank.reverse()
 # print(rank)
@@ -231,11 +230,11 @@ Result()
 # 84
 # Zidane got 10 grace marks
 # Vishal got 6 grace marks
-# ranks as from A to N StudentsA
-# ranks as from A to N StudentsB
-# ranks as from A to N StudentsC
-# ranks as from A to N StudentsD
-# ranks as from A to N StudentsE
+# ranks as from A to N Students:-A
+# ranks as from A to N Students:-B
+# ranks as from A to N Students:-C
+# ranks as from A to N Students:-D
+# ranks as from A to N Students:-E
 # ********** Marks Are:-*********
 # --- Zidane marks:- ---
 # Python=100
@@ -309,11 +308,11 @@ Result()
 # Deepyansh got 1 KT
 # *****************************
 # ***************************** Ranks are *****************************
-# Zidane got Ranked:-A
-# Vishal got Ranked:-B
-# Deepyansh got Ranked:-C
-# Shamsheer got Ranked:-D
-# Uzma got Ranked:-E
+# Uzma got Ranked:-A
+# Zidane got Ranked:-B
+# Vishal got Ranked:-C
+# Deepyansh got Ranked:-D
+# Shamsheer got Ranked:-E
 # *********************************************************************
 
 # Process finished with exit code 0
