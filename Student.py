@@ -4,15 +4,15 @@ for i in range(1, num + 1):
     print(f"Enter the name of Student {i}:-")
     nameList = input()
     name.append(nameList)
+subjects = ["Python" , "Java" , "SQL" , "CSS" , "Javascript"]
 # print(name)
 marks = list()  # it will contain as much list as per  the students
 temp_marks = list()  # it will contain marks of individual student as a single list which is empty right now
-for i in range(0,
-               num):  # Marks of each student will assign to a seperate list we will clear temp_marks every time in for loop using temp_marks.clear()
+for i in range(0, num):  # Marks of each student will assign to a seperate list we will clear temp_marks every time in for loop using temp_marks.clear()
     print(f"Enter marks of Python out of 100 for {name[i]}:-")
     python = int(input())
     temp_marks.append(python)
-    print(f"Enter marks of java for out of 100 {name[i]}:-")
+    print(f"Enter marks of Java for out of 100 {name[i]}:-")
     java = int(input())
     temp_marks.append(java)
     print(f"Enter marks of SQL for out of 100 {name[i]}:-")
@@ -51,25 +51,46 @@ for k, v in data_of_marks_per_subject.items():
     count = 0
     for i in range(0, 5):
         # print(v[i])
-        if (v[i] < 40):
+        if v[i] < 40:
             count = count + 1
 
-    if (count > 0):
-        if (count == 1):
+    if count > 0:
+        if count == 1:
             for i in range(0, 5):
-                if ( v[i] >= 30 ):
-                    if ( v[i] >= 30 and v[i] <= 40):
+                if v[i] >= 30 :
+                    if v[i] >= 30 and v[i] <= 40:
                         grace_marks=40-v[i]
                         count = count - 1
                         v[i] += grace_marks
-                        print(f"{k} got {grace_marks} grace marks")
+                        print(f"{k} got {grace_marks} grace marks in {subjects[i]}")
                         res1 = "Pass"
                         result.update({k: res1})
                         KT.update({k: count})
-                if (v[i] <= 29):
+                if v[i] <= 29:
                     res = "Fail"
                     result.update({k: res})
                     KT.update({k: count})
+        elif count == 2:
+            total_grace_marks = 10
+            for i in range(0, 5):
+                if v[i] >= 30:
+                    if v[i] >= 30 and v[i] < 40:
+                        grace_marks_required = 40-v[i]
+                        if grace_marks_required <= total_grace_marks:
+                            count = count-1
+                            v[i] += grace_marks_required
+                            if v[i] == 40:
+                                print(f"{k} got {grace_marks_required} in {subjects[i]}")
+                                total_grace_marks = total_grace_marks-grace_marks_required
+                                if count == 0:
+                                    res = "Pass"
+                                    result.update({k: res})
+                                    KT.update({k: count})
+
+                        else:
+                            res = "Fail"
+                            result.update({k: res})
+                            KT.update({k: count})
         else:
             res = "Fail"
             result.update({k: res})
@@ -125,7 +146,7 @@ for k, v in ranked_Student.items():
 
 
 # print(sorted_ranked_student)
-def Result():
+def results():
     print("********** Marks Are:-*********")
     for k, v in data_of_marks_per_subject.items():
         print(f"--- {k} marks:- ---")
@@ -162,157 +183,4 @@ def Result():
     print("*********************************************************************")
 
 
-Result()
-
-
-#----->OUTPUT:-
-# "/home/zidane/PycharmProjects/Learning 1/venv/bin/python" "/home/zidane/PycharmProjects/Learning 1/Student.py"
-# Enter number of Students:-5
-# Enter the name of Student 1:-
-# Zidane
-# Enter the name of Student 2:-
-# Uzma
-# Enter the name of Student 3:-
-# Shamsheer
-# Enter the name of Student 4:-
-# Vishal
-# Enter the name of Student 5:-
-# Deepyansh
-# Enter marks of Python out of 100 for Zidane:-
-# 100
-# Enter marks of java for out of 100 Zidane:-
-# 100
-# Enter marks of SQL for out of 100 Zidane:-
-# 98
-# Enter marks of CSS for out of 100 Zidane:-
-# 30
-# Enter marks of Javacsript for out of 100 Zidane:-
-# 95
-# Enter marks of Python out of 100 for Uzma:-
-# 100
-# Enter marks of java for out of 100 Uzma:-
-# 100
-# Enter marks of SQL for out of 100 Uzma:-
-# 100
-# Enter marks of CSS for out of 100 Uzma:-
-# 100
-# Enter marks of Javacsript for out of 100 Uzma:-
-# 100
-# Enter marks of Python out of 100 for Shamsheer:-
-# 90
-# Enter marks of java for out of 100 Shamsheer:-
-# 80
-# Enter marks of SQL for out of 100 Shamsheer:-
-# 79
-# Enter marks of CSS for out of 100 Shamsheer:-
-# 30
-# Enter marks of Javacsript for out of 100 Shamsheer:-
-# 30
-# Enter marks of Python out of 100 for Vishal:-
-# 90
-# Enter marks of java for out of 100 Vishal:-
-# 85
-# Enter marks of SQL for out of 100 Vishal:-
-# 34
-# Enter marks of CSS for out of 100 Vishal:-
-# 94
-# Enter marks of Javacsript for out of 100 Vishal:-
-# 94
-# Enter marks of Python out of 100 for Deepyansh:-
-# 90
-# Enter marks of java for out of 100 Deepyansh:-
-# 85
-# Enter marks of SQL for out of 100 Deepyansh:-
-# 29
-# Enter marks of CSS for out of 100 Deepyansh:-
-# 84
-# Enter marks of Javacsript for out of 100 Deepyansh:-
-# 84
-# Zidane got 10 grace marks
-# Vishal got 6 grace marks
-# ranks as from A to N Students:-A
-# ranks as from A to N Students:-B
-# ranks as from A to N Students:-C
-# ranks as from A to N Students:-D
-# ranks as from A to N Students:-E
-# ********** Marks Are:-*********
-# --- Zidane marks:- ---
-# Python=100
-# Java=100
-# SQL=98
-# CSS=40
-# JavaScript=95
-# --------------------
-# --- Uzma marks:- ---
-# Python=100
-# Java=100
-# SQL=100
-# CSS=100
-# JavaScript=100
-# --------------------
-# --- Shamsheer marks:- ---
-# Python=90
-# Java=80
-# SQL=79
-# CSS=30
-# JavaScript=30
-# --------------------
-# --- Vishal marks:- ---
-# Python=90
-# Java=85
-# SQL=40
-# CSS=94
-# JavaScript=94
-# --------------------
-# --- Deepyansh marks:- ---
-# Python=90
-# Java=85
-# SQL=29
-# CSS=84
-# JavaScript=84
-# --------------------
-# *****************************
-# ********** Total Marks Are:-*********
-# Zidane Total marks are 423
-# Uzma Total marks are 500
-# Shamsheer Total marks are 309
-# Vishal Total marks are 397
-# Deepyansh Total marks are 372
-# *****************************
-# ********** Average Marks Are:-*********
-# Zidane average marks are 84.6
-# Uzma average marks are 100.0
-# Shamsheer average marks are 61.8
-# Vishal average marks are 79.4
-# Deepyansh average marks are 74.4
-# *****************************
-# ********** Percentage Are:-*********
-# Zidane got 84.60 percentage
-# Uzma got 100.00 percentage
-# Shamsheer got 61.80 percentage
-# Vishal got 79.40 percentage
-# Deepyansh got 74.40 percentage
-# *****************************
-# ********** Result:-*********
-# Zidane is Pass
-# Uzma is Pass
-# Shamsheer is Fail
-# Vishal is Pass
-# Deepyansh is Fail
-# *****************************
-# ********** Number of KTs :-*********
-# Zidane got 0 KT
-# Uzma got 0 KT
-# Shamsheer got 2 KT
-# Vishal got 0 KT
-# Deepyansh got 1 KT
-# *****************************
-# ***************************** Ranks are *****************************
-# Uzma got Ranked:-A
-# Zidane got Ranked:-B
-# Vishal got Ranked:-C
-# Deepyansh got Ranked:-D
-# Shamsheer got Ranked:-E
-# *********************************************************************
-
-# Process finished with exit code 0
+results()
